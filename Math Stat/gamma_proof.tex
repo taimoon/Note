@@ -33,8 +33,9 @@
          u  &= x^{\alpha - 1}    & v &= e^{-x} \\
          du &= (\alpha - 1)x^{\alpha - 2} dx & dv &= -e^{-x} dx \\
         \Gamma(\alpha) 
-        &=  \left[x^{\alpha - 1} e^{-x} \right]^\infty_0 
-            - \int^\infty_0 -e^{-x}  (\alpha - 1)x^{\alpha - 2} dx \\
+        = - \int^\infty_0  x^{\alpha - 1} (- e^{-x}) dx
+        &=  - \left[x^{\alpha - 1} e^{-x} \right]^\infty_0 
+            + \int^\infty_0 e^{-x}  (\alpha - 1)x^{\alpha - 2} dx \\
         &= 0 + (\alpha - 1) \int^\infty_0 x^{\alpha - 2}  e^{-x}  dx \\
         \Gamma(\alpha)  &= (\alpha - 1)\Gamma(\alpha - 2)
     \end{align*}
