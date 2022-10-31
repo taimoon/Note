@@ -1,3 +1,9 @@
 */.ipynb_checkpoints/*.ipynb
 */__pycache__/**
 Python Note/solutions
+*.aux
+*.fls
+*.ist
+*.log
+*.gz
+*.fdb_latexmk

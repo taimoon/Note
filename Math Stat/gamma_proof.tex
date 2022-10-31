@@ -1,0 +1,103 @@
+\section{Gamma Probability Distribution}
+
+\begin{definition}[Gamma Function]
+    \[
+    \Gamma(\alpha) = \int^\infty_0 x^{\alpha - 1} e^{-x} dx    
+    \]
+\end{definition}
+
+\begin{theorem}[integration by part]
+    \[
+    \int u dv = uv - \int v du    
+    \]
+\end{theorem}
+
+\begin{theorem} For $n$ is any integer larger than 0
+    \[\Gamma(1) = 1 \]
+    \[\Gamma(\alpha) = (\alpha -1 )\Gamma(\alpha) \]
+    \[\Gamma(n) = (n-1)! \]
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        \Gamma(1) &= \int^\infty_0 x^{1 - 1} e^{-x} dx
+            = \int^\infty_0 e^{-x} dx \\
+            &= \left[-e^{-x}\right]^\infty_0 \\
+            &= -\lim_{x \rightarrow \infty} \frac{1}{e^x}  - (-e^{-0}) \\
+            &= - 0 - (- 1) = 1
+    \end{align*}
+    Integration by part,
+    \begin{align*}
+        \Gamma(\alpha) 
+        &=  \int^\infty_0 x^{\alpha - 1} e^{-x} dx \\
+         u  &= x^{\alpha - 1}    & v &= e^{-x} \\
+         du &= (\alpha - 1)x^{\alpha - 2} dx & dv &= -e^{-x} dx \\
+        \Gamma(\alpha) 
+        &=  \left[x^{\alpha - 1} e^{-x} \right]^\infty_0 
+            - \int^\infty_0 -e^{-x}  (\alpha - 1)x^{\alpha - 2} dx \\
+        &= 0 + (\alpha - 1) \int^\infty_0 x^{\alpha - 2}  e^{-x}  dx \\
+        \Gamma(\alpha)  &= (\alpha - 1)\Gamma(\alpha - 2)
+    \end{align*}
+    The third statement follows from the mathematical induction and  $\Gamma(\alpha) = (\alpha -1 )\Gamma(\alpha)$
+\end{proof}
+
+\begin{definition}
+    A random variable $X$ has a \emph{gamma distribution with parameters} 
+    $\alpha > 0$ and $\beta > 0$ iff. the density function of $X$ is
+    \[
+        f(x) =
+        \begin{cases}
+        \frac{x^{\alpha - 1}e^{\frac{-x}{\beta}}}{\beta^\alpha\Gamma(\alpha)} &, 0 \leq y < \infty,\\
+        0&, \text{elsewhere}
+        \end{cases} 
+    \]
+\end{definition}
+
+\begin{theorem}[mean and variance of gamma distribution]
+    If a random variable $X$ has a gamma distribution with parameters $\alpha > 0$  and $\beta > 0$, then
+    \[
+    E(X) = \alpha\beta \text{ and } V(X) = \alpha\beta^2
+    \]
+\end{theorem}
+
+\begin{proof}
+    By definition(i.e.: suppose for magic), the gamma density function is
+
+    \[
+        \int^\infty_{-\infty} f(x) dx 
+        = \int^\infty_0 \frac{x^{\alpha - 1}e^{\frac{-x}{\beta}}}{\beta^\alpha\Gamma(\alpha)} dx = 1
+    \]
+
+    Hence,
+    \[
+        \beta^\alpha\Gamma(\alpha) 
+        = 
+        \int^\infty_0 x^{\alpha - 1}e^{\frac{-x}{\beta}} dx
+    \]
+
+    and
+
+    \begin{align*}
+        E(X) &= \int^\infty_0 x\frac{x^{\alpha - 1}e^{\frac{-x}{\beta}}}{\beta^\alpha\Gamma(\alpha)} dx 
+        = \frac{1}{\beta^\alpha\Gamma(\alpha)} \int^\infty_0 x^\alpha e^{\frac{-x}{\beta}} dx \\
+        &= \frac{1}{\beta^\alpha\Gamma(\alpha)} \left[\beta^{\alpha + 1} \cdot \Gamma(\alpha + 1)\right] \\
+        &= \frac{1}{\Gamma(\alpha)} \left[\beta \cdot \alpha \Gamma(\alpha)\right] \\
+        E(X) &= \alpha\beta
+    \end{align*}
+    Since $V(X) = E(X^2) - [E(X)]^2$,
+    \begin{align*}
+        E(X^2) &= \int^\infty_0 x^2\frac{x^{\alpha - 1}e^{\frac{-x}{\beta}}}{\beta^\alpha\Gamma(\alpha)} dx 
+        = \frac{1}{\beta^\alpha\Gamma(\alpha)} \int^\infty_0 x^{\alpha + 1} e^{\frac{-x}{\beta}} dx \\
+        &= \frac{1}{\beta^\alpha\Gamma(\alpha)} \left[\beta^{\alpha + 2} \cdot \Gamma(\alpha + 2)\right] \\
+        &= \frac{1}{\Gamma(\alpha)} \left[\beta^2 \cdot (\alpha + 1)\cdot \alpha \Gamma(\alpha)\right] \\
+        E(X^2) &= \alpha(\alpha+1)\beta^2
+    \end{align*}
+    Then,
+    \begin{align*}
+        V(X) &= E(X^2) - [E(X)]^2 \\
+        &= \alpha(\alpha+1)\beta^2 - (\alpha\beta)^2 \\
+        &= (\alpha^2 + \alpha)\beta^2 - \alpha^2\beta^2 \\
+        &= (\alpha^2 + \alpha -  \alpha^2)\beta^2 \\
+        V(X) &= \alpha\beta^2
+    \end{align*}
+\end{proof}

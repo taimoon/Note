@@ -1,0 +1,71 @@
+\section{Poisson Distribution}
+\begin{theorem}
+    From calculus,
+    \[
+    e^x = 1 + \frac{x}{1!}  + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots = \sum^\infty_{n=0} \frac{x^n}{n!}
+    \]
+\end{theorem}
+\begin{definition}
+    A random variable $X$ has a \emph{Poisson probability distribution} iff.
+    
+    \[
+    P(X=x) = \frac{\lambda^x}{x!}e^{-\lambda}, x = 0, 1, \ldots, \lambda > 0    
+    \]
+\end{definition}
+
+\begin{corollary}\label{thm:poi_sum_to_one}
+    For poisson random variable $X$, the following is true
+    \[
+    \sum_{\text{all } x} P(X = x) = \sum^\infty_{x = 0} \frac{\lambda^x}{x!}e^{-\lambda}   = 1
+    \]
+\end{corollary}
+\begin{proof}
+    \begin{align*}
+    \sum^\infty_{x = 0} \frac{\lambda^x}{x!}e^{-\lambda} &= e^{-\lambda}\sum^\infty_{x = 0} \frac{\lambda^x}{x!} \\
+    &= e^{-\lambda} \cdot e^{\lambda} \\
+    &= 1
+    \end{align*} 
+\end{proof}
+
+\begin{theorem}[mean and variance of poisson distribution]
+    If $X$ is a random poisson distribution with parameter $\lambda$, then
+    \[
+        E(X) = \lambda \text{ and } V(X) = \lambda
+    \]
+\end{theorem}
+
+\begin{proof}
+    Note that the first term of the summands is 0,
+    \begin{align*}
+        E(X) &= \sum^\infty_{x = 0} x\frac{\lambda^x e^{-\lambda}}{x!}
+        = \sum^\infty_{x = 1} x\frac{\lambda^x e^{-\lambda}}{x!} \\
+        &= \sum^\infty_{x = 1} x\frac{\lambda \lambda^{x-1} e^{-\lambda}}{x(x-1)!} \\
+        &= \lambda \sum^\infty_{x = 1} \frac{\lambda^{x-1} e^{-\lambda}}{(x-1)!}
+    \end{align*}
+    Let $z = x - 1$, then
+    \[
+        E(X) =\lambda \sum^\infty_{z = 0} \frac{\lambda^z e^{-\lambda}}{z!} = \lambda
+    \]
+    The latter summation is geometric distribution sum as in \nameref{thm:poi_sum_to_one}, then it is $1$.
+    
+    Note that the first 2 terms of the summands are 0,
+    \begin{align*}
+        E[X(X-1)] 
+            &= \sum^\infty_{x = 0} x(x-1)\frac{\lambda^x e^{-\lambda}}{x!} \\
+        E(X^2 - X)
+            &= \sum^\infty_{x = 2} \frac{\lambda^x e^{-\lambda}}{(x-2)!} \\
+        E(X^2) - E(X)   
+            &= \lambda^2 \sum^\infty_{x = 2} \frac{\lambda^{x-2} e^{-\lambda}}{(x-2)!} \\
+        \text{Let z = x - 2} \\
+        E(X^2) - \lambda
+            &= \lambda^2 \sum^\infty_{z = 0} \frac{\lambda^z e^{-\lambda}}{z!}
+            = \lambda^2 (1) \\
+        E(X^2) &= \lambda^2 + \lambda \\
+        \therefore 
+            V(X) &= E(X^2) - [E(X)^2] \\
+                &= \lambda^2 + \lambda - (\lambda)^2 \\
+            V(X)   &= \lambda
+    \end{align*}
+\end{proof}
+
+

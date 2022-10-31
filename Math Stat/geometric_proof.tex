@@ -1,0 +1,62 @@
+\section{Geometric Distribution}
+\begin{definition}[Geometric Distribution]
+    A random variable $X$ has a geometric probability distribution iff.
+    \[P(X=x) = (1-p)^{x-1}p, x = 1,2,3, \ldots, 0 \leq p \leq 1\]
+\end{definition}
+
+\begin{theorem}[mean and variance of geometric distribution]
+    If $X$ is a random geometric distribution with success probability $p$, then
+    \[
+        E(X) = \frac{1}{p} \text{ and } V(X) = \frac{1-p}{p^2}
+    \]
+\end{theorem}
+
+\begin{proof}
+    By definition of \nameref{def:exp_val}, let $q = 1-p$ then $p = 1 - q$ and
+    \[
+        E(X) = \sum^{\infty}_{x = 1} xq^{x-1}p = p\sum^{\infty}_{x = 1} xq^{x-1}
+    \]
+    Observe that, for $x \geq 1$
+    \[
+       \int{q^{x-1}} dq = \frac{q^x}{x}  \iff \frac{d}{dq} q^x = xq^{x-1}
+    \]
+    Then,
+    \[
+        E(X) = p\sum^{\infty}_{x = 1} xq^{x-1} = p\frac{d}{dq}\left(\sum^{\infty}_{x = 1} q^x\right)
+    \]
+    The latter sum is the geometric series, $q + q^2 + q^3 + \ldots$, and if $|q| < 1$, then the sum is equal to $\frac{q}{1-q}$. Therefore,
+
+    \begin{align*}
+        E(X) &= p\frac{d}{dq}\left(\frac{q}{1-q}\right)  = p\frac{d}{dq}\left[q(1-q)^{-1}\right]\\
+        &= p\left[1 \cdot {(1-q)}^{-1} + q \cdot (-1\cdot -1){(1-q)}^{-2}\right] \\
+        &= p\left[\frac{1}{1-q} + \frac{q}{{(1-q)}^2}\right] \\
+        &= p\left[\frac{(1-q) + q}{{(1-q)}^2}\right] 
+        = p\left(\frac{1}{p^2}\right) \\
+        E(X) &= \frac{1}{p}
+    \end{align*}
+
+    In deriving variance, we can use the same technique in deriving mean. Observe that,
+    \[
+        \iint{q^{x-1}} dq = \frac{q^{x+1}}{x(x+1)}   
+        \iff 
+        \frac{d^2}{dq^2} q^{x+1} = x(x+1)q^{x-1}
+     \]
+    
+    Hence, the tedious second derivative calculation is omitted here and left as exercise for reader
+    \begin{align*}
+        E[X(X+1)] &= \sum^{\infty}_{x = 1} x(x+1)q^{x-1}p  
+        = p\sum^{\infty}_{x = 1} x(x+1)q^{x-1} \\
+        E(X^2 + X) &= p\frac{d^2}{dq^2} \left( \sum^{\infty}_{x = 1} q^{x+1} \right) \\
+        E(X^2) + E(X) &= p\frac{2}{{(1+q)^3}} \\
+        E(X^2) + \frac{1}{p} &= \frac{2p}{p^3}  \\
+        E(X^2)  &= \frac{2}{p^2} - \frac{1}{p}
+    \end{align*}
+    Then,
+    \begin{align*}
+        V(X) &= E(X^2) - {[E(X)]}^2 \\
+            &= \frac{2}{p^2} - \frac{1}{p} - \frac{1}{p^2} \\
+            &= \frac{1}{p^2} - \frac{1}{p} \\
+        V(X)    &= \frac{1-p}{p^2}
+    \end{align*}
+
+\end{proof}

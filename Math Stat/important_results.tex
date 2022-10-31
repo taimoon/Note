@@ -1,0 +1,157 @@
+\begin{definition}[Expected Value]\label{def:exp_val}
+    Let $X$ be a discrete random variable with the probability function $P(X = x)$. Then the \emph{expected value} of $X$, $E(X)$, is defined to be
+    \[
+        E(X) = \sum_{\text{all } x}{xP(X = x)}
+    \]
+\end{definition}
+
+
+\section{Important Results}
+
+To understand the ideas behind the next theorem and its proof, we shall see a particular examples. 
+A usual dice has faces of $1, 2, 3, 4, 5$ and $6$.
+To describe the probability of dice-tossing, we may assume that the events of face facing upward are equally likely.
+Then, the distribution $X$ can be represented by table below:
+
+\[\begin{array}{|c|cccccc|}
+    \hline
+    x           & 1 & 2 & 3 & 4 & 5& 6\\
+    \hline 
+    P(X = x)    & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} \\
+    \hline
+\end{array}\]
+
+By definition~\ref{def:exp_val}, the expected value of this distribution is 
+
+\begin{align*}
+    E(X) & = \sum_{\text{all } x}{xP(X = x)} \\
+        & = 1 \left(\frac{1}{6}\right) + 
+            2\left(\frac{1}{6}\right) + 
+            3\left(\frac{1}{6}\right) + 
+            4\left(\frac{1}{6}\right)  + 
+            5\left(\frac{1}{6}\right) + 
+            6\left(\frac{1}{6}\right) \\
+        & = \frac{7}{2}
+\end{align*}
+
+Suppose that a new dice having same faces as usual dice but with different number of dots on each face. 
+The new faces are $0, 6, 0, 12, 0$ and $18$.
+Indeed, these values are transformed by the function $y = f(x) = 3x$ if $x$ is even else $0$.
+Since having same number of faces, with the same assumption equally likely,
+the new distribution $Y$ is similiar as before
+
+\[\begin{array}{|c|cccccc|}
+    \hline
+    y           & 0_1 & 6 & 0_3 & 12 & 0_5 & 18\\
+    \hline 
+    P(Y = y)    & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} \\
+    \hline
+\end{array}\]
+
+\[\begin{array}{|c|cccc|}
+    \hline
+    y           & 0 & 6 & 12 & 18\\
+    \hline 
+    P(Y = y)    & \sfrac{1}{2} & \sfrac{1}{6} & \sfrac{1}{6} & \sfrac{1}{6} \\
+    \hline
+\end{array}\]
+
+It can be calculated that the new expected value is $6$. 
+Observe that the probability of $6$ facing upward in new dice is same as $2$ in usual dice.
+Also observe that the function $f$ is not one-to-one.
+Nevertheless, the probabilities are corresponded between these two different distribution.
+
+\begin{theorem}
+    Let $X$ be a discrete random variable with the probability function $P(X = x)$ and $f(x)$ be a real-valued function of $X$. 
+    Then the \emph{expected value} of $f(X)$, $E[f(X)]$, is given by
+    \[
+        E[f(X)] = \sum_{\text{all } x}{f(x)P(X = x)}
+    \]
+\end{theorem}
+
+\begin{proof}
+    Suppose that domain of $X$ consists of countably infinite values, $x_1, x_2,  \ldots$
+    The function $f$ is arbitrary that we must consider the case of not one-to-one function.
+    Suppose that $f(X) = Y$ (\emph{i.e.~}: image of $f$) consists of finite values, $y_1, \ldots, y_n$.
+    Since the function $f$ is arbitrary (\emph{i.e.~}: including the case of not one-to-one),
+
+    \[P(Y = y_i) = P(f(X) = y_i) = 
+        \sum_{\substack {
+            \text{all $x$ s.t.} \\
+            f(x) = y}} 
+        P(X = x)
+    \]
+
+    By definition~\ref{def:exp_val}, the expected value of $f(X)$ is given by
+
+    \begin{align*}
+        E[f(X)] &= \sum_{\text{all } y}{yP(Y = y)} \\
+            &=  \sum_{\text{all } y}
+                {y \sum_{\substack {
+                        \text{all $x$ s.t.} \\
+                        f(x) = y}}  
+                    P(X = x)} \\
+            &= \sum_{\text{all y}}
+                {\sum_{\substack {
+                        \text{all $x$ s.t.} \\
+                        f(x) = y}} 
+                    yP(X = x)} \\
+            &= \sum_{\text{all y}}
+                    {\sum_{\substack {
+                            \text{all $x$ s.t.} \\
+                            f(x) = y}} 
+                        f(x)P(X = x)} \\
+            &= \sum_{\text{all $x$}} f(x)P(X = x)
+    \end{align*}
+\end{proof}
+
+Usually, proofs start with suppositions (e.g.~: any values, arbitrary values). 
+Then, we can collect related definitions. 
+For example, the previous proof mentions the definition of expected value.
+However, many texts omit the initial suppositions 
+because these texts assume mature readers. 
+Hence, you must include all necessary suppositions in writing rigorous proof.
+
+
+Let $X$ be any random variable (including discrete and continuous), $c$ be arbitrary real number, 
+and $f_1(x), \ldots, f_n(x)$ be any functions of $X$, then following are true
+\begin{theorem}\label{thm:const_exp_val}$E(c) = c$\end{theorem}
+\begin{theorem}\label{thm:const_fn_exp_val}$E[cf(x)] = cE[f(x)]$\end{theorem}
+\begin{theorem}\label{thm:func_exp_val}$E[f_1(x) + \ldots + f_n(x)]= E[f_1(x)] + \ldots + E[f_n(x)]$\end{theorem}
+
+Interested readers may consult the textbooks for the proofs of these theorems \ref{thm:const_exp_val}, \ref{thm:const_fn_exp_val} and \ref{thm:func_exp_val}.
+
+\begin{definition}
+    Suppose $X$ is any random variable, the variance of ta random variable $X$ is defined as follow
+
+    \[
+        V(X) = E\{[X - E(X)]^2\}
+    \]
+\end{definition}
+
+\begin{theorem}\label{thm:var_equivalent}
+    If $X$ is a random variable with probability function $P(X = x)$, then
+
+    \[
+        V(X) = E\{[X - E(X)]^2\} = E(X^2) - {[E(X)]}^2    
+    \]
+\end{theorem}
+
+\begin{proof}
+    Let $E(X) = \mu$. Note that $E(X)$ is a constant value, hence
+    \begin{align*}
+        V(X) &= E[(X - \mu)^2]   & \text{(by definition of variance)}\\   
+        &= E(X^2 - 2X\mu + \mu^2)    \\
+        &= E(X^2) - 2E(X\mu) + E(\mu^2) & \text{(by theorem ~\ref{thm:func_exp_val})} \\
+        &= E(X^2) - 2\mu E(X) + \mu^2  & \text{(by theorem ~\ref{thm:const_fn_exp_val})} \\
+        &= E(X^2) - 2\mu\cdot\mu + \mu^2      & \text{(by theorem ~\ref{thm:const_exp_val})}\\
+        &= E(X^2) - \mu^2 \\
+        &= E(X^2) - {E(X)}^2
+    \end{align*}
+\end{proof}
+
+Same as before, in writing proof, we can start with definitions after stating necessary suppositions.
+The theorems \ref{thm:const_exp_val}, \ref{thm:const_fn_exp_val} and \ref{thm:func_exp_val} acts like lemmas (i.e.: helpers).
+They are used in proving the theorem \ref{thm:var_equivalent}.
+The proof demonstrates the usage of previous results.
+This shows the difficultly of math is due to its cumulative nature.

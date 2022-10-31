@@ -1,0 +1,60 @@
+\section{Continuous Random Variable}
+\begin{definition}
+    Let $X$ denote any random variable. The \emph{distribution function} of $X$, denoted by $F(x)$
+    is such that $F(x) = P(X \leq x)$ for $-\infty < x < \infty$. And $X$ is continuous random variable iff. $F(X)$ is continuous for $-\infty < x < \infty$ 
+\end{definition}
+
+
+\begin{definition}
+    Let $X$ denote any continuous random variable with distribution function $F(x)$.
+    If this derivative exists
+
+    \[
+    f(x) = \frac{d}{dx}F(x) = F^\prime(x)    
+    \],
+    then $f(x)$ is called the \emph{probability density function} for the continuous random variable $X$
+\end{definition}
+\begin{corollary*} It follows from the definitions that
+    \[F(x) = \int^x_{-\infty} f(x) dx\]
+\end{corollary*}
+\begin{theorem}
+    If the random variable $X$ with the density function $f(x)$ and $a < b$, 
+    then
+    \[
+    P(a\leq x \leq b) = \int_a^b f(x) dx    
+    \]
+\end{theorem}
+
+\begin{definition}[Expected Value]\label{def:exp_val_cont}
+    Let $X$ be a continuous random variable with the density function $f(x)$. Then the \emph{expected value} of $X$, $E(X)$, is defined to be
+    \[
+        E(X) = \int_{-\infty}^{\infty} xf(x) dx
+    \]
+\end{definition}
+
+\section{Uniform Probability distribution}
+
+
+\begin{definition}
+    For $\theta_1 < \theta_2$, a random vairable $X$ has a continuous \emph{uniform distribution} on the interval $(\theta_1, \theta_2)$ 
+    iff. the density function of $X$ is
+    \[ 
+        f(x) = 
+        \begin{cases} 
+            \frac{1}{\theta_2 - \theta_1} &, \theta_1 < x <\theta_2, \\
+            0 &, \text{elsewhere}.
+        \end{cases}
+    \]
+\end{definition}
+
+\begin{theorem}[mean and variance of uniform distribution]
+    For $\theta_1 < \theta_2$ and $X$ is a continuous random variable on the interval $(\theta_1, \theta_2)$,
+    then
+
+    \[
+    E(X) = \frac{\theta_1 + \theta_2}{2} \text{ and } V(X) = \frac{{(\theta_2 - \theta_1)}^2}{12}
+    \]
+\end{theorem}
+\begin{proof}
+    The proof is left as exercises for readers. (common phrases in math textbooks)
+\end{proof}

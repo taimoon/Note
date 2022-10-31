@@ -1,0 +1,123 @@
+\section{Binomial Distribution}
+
+\begin{definition}[Binomial Coefficient]\label{def:bi_coeff}
+    \[
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}    
+    \]
+\end{definition}
+
+\begin{theorem}[Binomial Theorem]\label{thm:bi_thm}
+    For any nonnegative integers $n$, 
+    \[(x+y)^n = \sum_{k = 0}^n {x^k y^{n - k}}\]
+\end{theorem}
+
+\begin{definition}[Binomial Distribution]\label{def:bi_dist}
+    A random variable $X$ has a binomial distribution 
+    based on $n$ trials with success probability $p$ iff.
+    \[
+        P(X=x) = \binom{n}{x} p^x (1 - p)^{n - x} \text{ , }
+        y = 0, 1, \ldots, n \text{ and } 0 \leq p \leq 1
+        \]
+\end{definition}
+
+By \ref{thm:bi_thm}, it can be easily show that
+\begin{corollary}\label{thm:bi_sum_to_one}
+    If $X$ is a random binomial distribution and $q = 1-p$, then
+    \[
+    \sum_{i = 0}^n{P(X=x)} = 
+        \sum_{i = 0}^n{\binom{n}{x} p^x (1 - p)^{n - x}}
+        = \sum_{i = 0}^n{\binom{n}{x} p^x q^{n - x}}
+        = 1
+    \] 
+\end{corollary}
+\begin{proof}
+    By \nameref{thm:bi_thm}, 
+    \begin{align*}
+        \sum_{i = 0}^n{\binom{n}{x} p^x (1 - p)^{n - x}}
+        = {[p + (1-p)]}^n 
+        &= 1^n = 1 &
+    \end{align*}
+\end{proof}
+
+
+\begin{theorem}[mean and variance of binomial distribution]
+    If $X$ is a random binomial distribution based on $n$ trials with success probability $p$, then the expected value and variance of $X$ are
+    \[
+        E(X) = np \text{ and } V(X) = np(1-p)
+    \]
+\end{theorem}
+
+\begin{proof}
+    Let $q = 1 - p$. By definition of \nameref{def:exp_val} and \nameref{def:bi_dist},
+    \[
+    E(X) = \sum_{\text{all } x} x P(X=x) = \sum_{i = 0}^n x{\binom{n}{x} p^x q^{n - x}}
+    \]
+    Note that the first term of $x$ is 0, hence
+    \begin{align*}
+        \sum_{x = 0}^n x{\binom{n}{x} p^x q^{n - x}}
+        &=  \sum_{x = 1}^n x{\frac{n!}{x!(n-x)!}  p^x q^{n - x}} \\
+        &=  \sum_{x = 1}^n x{\frac{n!}{x(x-1)(n-x)!}  p^x q^{n - x}} \\
+        &= \sum_{x = 1}^n {\frac{n!}{(x-1)!(n-x)!}  p^x q^{n - x}}
+    \end{align*}
+    It is possibly easier if we can use the axiom stating that $\sum_{\text{all } x} P(X = x) = 1$. Refering the corollary \ref{thm:bi_sum_to_one}, we may reorganize the summands,
+    \begin{align*}
+        \sum_{x = 0}^n x{\binom{n}{x} p^x q^{n - x}}
+        &= \sum_{x = 1}^n {\frac{n!}{(x-1)!(n-x)!}  p^x q^{n - x}} \\
+        &= \sum_{x = 1}^n {\frac{n(n-1)!}{(x-1)!(n-x)!}  p\cdot p^{x-1} q^{n - x}} \\
+        &= np \sum_{x = 1}^n {\frac{(n-1)!}{(x-1)!(n-x)!}  p^{x-1} q^{n - x}}
+    \end{align*}
+    Let $z = x-1$ and $m = n - 1$, then $x = z+1$, $x = 1 \implies z = 0$,  $x = n \implies z = n-1$ and
+    \begin{align*}
+        \sum_{x = 0}^n x{\binom{n}{x} p^x q^{n - x}}
+        &= np \sum_{z = 0}^{n-1} {\frac{(n-1)!}{z!(n-1-z)!}  p^z q^{n - 1 - z }} \\
+        &= np \sum_{z = 0}^{m} {\frac{m!}{z!(m-z)!}  p^z q^{m - z }} \\
+        &= np \sum_{z = 0}^{m} \binom{m}{z} p^zq^{m-z} \\
+        E(X) &= np
+    \end{align*}
+where $\sum_{z = 0}^{m} \binom{m}{z} p^zq^{m-z}$ is resemblance to new binomial distribution, hence it follows from the corollary \ref{thm:bi_sum_to_one} that it is $1$.
+
+From the theorem \ref{thm:var_equivalent}, we know that $V(X) = E(X^2) - {[E(X)]}^2$. Thus, we can obtain the $V(X)$ if we obtain $E(X^2)$. Using previous technique doesn't work for finding $E(X^2)$,
+
+\begin{align*}
+    E(X^2) &= \sum^{n}_{x = 0} x^2P(X=x)
+        = \sum_{x = 0}^n x^2{\binom{n}{x} p^x q^{n - x}} \\
+        &= \sum_{x = 0}^{n} {x^2 \frac{n!}{x!(n-1)!}  p^z q^{m - z }} \\
+        &= \sum_{x = 0}^{n} {x \frac{n!}{(x-1)!(n-1)!}  p^z q^{m - z }}
+\end{align*}
+
+
+Instead, we include $x-1$ so that it can be factored out. In fact, 
+\begin{align*}
+    E[X(X-1)] &= E(X^2 - X) = E(X^2) - E(X) \\
+    \therefore E(X^2) &= E[X(X-1)] + E(X)
+\end{align*}
+
+
+Note that the first 2 terms of $x$ are $0$ and $1$, then their summands are zero. Thus
+\begin{align*}
+    E[X(X-1)]
+        &= \sum^{n}_{x = 0} x(x-1)P(X=x)\\
+        &= \sum_{x = 2}^n x(x-1){\binom{n}{x} p^x q^{n - x}} \\
+        &= \sum_{x = 2}^{n} {x(x-1) \frac{n!}{x(x-1)(x-2)!n!}  p^n q^{n - x }} \\
+        &= \sum_{x = 2}^{n} {\frac{n!}{(x-2)!(n-1)!}  p^n q^{n - x  }}\\
+        &= n(n-1)p^2  \sum_{x = 2}^{n} {\frac{(n-2)!}{(x-2)!n!}  p^{n-2} q^{n - x  }}
+\end{align*}
+Using similar techinque in derivation of mean. Let $z = x - 2$, then
+\begin{align*}
+    E[X(X-1)]
+        &= n(n-1)p^2  \sum_{z= 0}^{n-2} {\frac{(n-2)!}{z!n!}  p^{z} q^{n - 2 - z }} \\ 
+        &= n(n-1)p^2  \sum_{z= 0}^{n-2} {\binom{n-2}{z}  p^{z} q^{n - 2 - z }} \\
+        &= n(n-1)p^2 = n^2p^2 - np^2 \\
+   E[X(X-1)] &= {(np)}^2 - np^2
+\end{align*}
+
+Therefore,
+
+\begin{align*}
+    V(X) &=  E(X^2) - {[E(X)]}^2 \\
+        &= E[X(X-1)] + E(X) - {[E(X)]}^2 \\
+        &= {(np)}^2 - np^2 + np - {(np)}^2 \\
+        &= np - np^2 = np(1-p)
+\end{align*}
+
+\end{proof}
