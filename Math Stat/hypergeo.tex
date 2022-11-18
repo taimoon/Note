@@ -1,0 +1,36 @@
+\section{Hypergeometric Distribution}
+
+\newcommand*{\permute}[2]{{}^{#1}P_{#2}}
+Consider an experiment of drawing $n$ balls from an urn containing $N$ balls, withohut replacement. Suppose that balls are assigned integer consecutively. Then, an event of drawing $n$ balls from the urn can be characterized by a set whose elements correspond to a selection of $n$ elements from the total of $N$. For example,
+
+\[
+\left|\{8,1,4,9,5,41,56,\ldots, 88\}\right| = n
+\]
+
+Hence, there are $\binom{N}{n}$ of such set; set disregards order of elements.
+
+Suppose that the same urn but contains contains $r$ red balls and $w$ balls, where $r+w=N$. Then the number of events that contain $k$ red balls and $(n-k)$ white balls in $n$ sample is
+
+\[
+\binom{r}{k}\binom{w}{n-k}  
+\]
+
+Hence, the probability of such event is
+
+\[
+P(k \text{ red balls are chosen}) = \frac{\binom{r}{k}\binom{w}{n-k}}{\binom{N}{n}}    
+\]
+
+
+\subsection{Hypergeometric is ``Orderless''}
+
+Let say it is not set but $n$-tuple which order do matters. In other word, what is the probability of draw $n$ balls in order without replacement from a $N$ urn. The urn contains $r$ red balls and $w$ white balls. The probability of $k$ red balls in the sequence is:
+
+\begin{align*}
+    P(k \text{ red balls are picked}) 
+    & = \frac{\frac{n!}{k!(n-k)!}\cdot\permute{k}{r}\cdot\permute{w}{n-k}}{\permute{N}{n}} \\
+    & = \frac{\frac{\permute{k}{r}}{k!}\cdot\frac{\permute{w}{n-k}}{(n-k)!}}{\permute{N}{n} \cdot \frac{1}{n!}} \\
+    & = \frac{\binom{r}{k}\binom{w}{n-k}}{\binom{N}{n}} 
+\end{align*}
+
+Since $\binom{a}{b} = \frac{\permute{a}{b}}{b!}$

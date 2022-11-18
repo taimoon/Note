@@ -7,3 +7,4 @@ Python Note/solutions
 *.log
 *.gz
 *.fdb_latexmk
+*.synctex(busy)
