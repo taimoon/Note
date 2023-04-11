@@ -42,7 +42,8 @@ How to read a book - Charles Van Doren and Mortimer J. Adler
    5. Compilers: Principles, Techniques & Tools
 6. Deep Learning
    
-   TensorFlow, Keras and deep learning, without a PhD - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist
+   1. Andrej Kaparthy, Neural Network : Zero to Hero - https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
+   2. TensorFlow, Keras and deep learning, without a PhD - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist
 
 
 
