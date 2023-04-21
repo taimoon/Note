@@ -26,9 +26,10 @@ How to read a book - Charles Van Doren and Mortimer J. Adler
 
    
    1. It is free. https://web.mit.edu/6.001/6.037/sicp.pdf
-   2. JS version: https://sicp.sourceacademy.org/
-   3. Python version: https://composingprograms.com/
-   4. More friendly version: https://htdp.org/
+   2. Author Lecture Videos. https://youtu.be/-J_xL4IGhJA
+   3. JS version: https://sicp.sourceacademy.org/
+   4. Python version: https://composingprograms.com/
+   5. More friendly version: https://htdp.org/
 2. Computer Architecture
    1. [The Elements of Computing System : nand2tetris](https://www.nand2tetris.org/)
    2. Computer Systems: A Programmer's Perspective - Randal E. Bryant and David R. O'Hallaron
@@ -66,7 +67,7 @@ What if you're math lover wishing to appreciate advance math but not able to joi
     
     Prerequisite: Know some multivariate calculus and comfortable with proof
     
-    Another good first proof writing course but lighter than abstract algebra.
+    Another good first proof writing course and lighter than abstract algebra.
 
     Math stats make sense of why statistic is applied in that way. For example, why normal distribution is everywhere? why chi-square distribution? why student-t distribtion? why F distribution?
     
