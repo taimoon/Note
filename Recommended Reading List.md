@@ -18,12 +18,13 @@ How to read a book - Charles Van Doren and Mortimer J. Adler
    
    For programming, I would recommend only one book : SICP.
 
-   Harvard's cs50x is by far the best CS for general audience. Although SICP is created as introduction to CS, it is notoriously difficult, dense, somewhat "outdated" and hated by many. It is desigend during 1980s and the choice of language Scheme only make it worst. 
+   Harvard's cs50x is by far the best CS for general audience. Although SICP is created as introduction to CS, it is notoriously difficult, dense, somewhat "outdated" and hated by many. It is designed during 1980s and the choice of language Scheme only make it worst. 
    
    It covers many important concepts such as algorithm analysis, data abstraction, functional programming, object oriented programming, stream, concurrency, interpreter (chapter 4), lazy-evaluation, non-determinsitc programming, logic programming and compiler (chapter 5). 
 
-   Why SICP? Because unlike other courses only teach you well verse of certain specific programming language and technology, SICP teaches you about CS itself. It delivers fundementals in the most intellectually fun way. The practices of SICP are not drill but provoke you to think carefully. Anyway, isn't designing programming language cool? SICP teach you that.
+   Why SICP? Because unlike other courses only teach you well verse of certain specific programming language and technology, SICP teaches you about CS itself. It delivers fundamentals in the most intellectually fun way. The practices of SICP are not drill but provoke you to think carefully. Anyway, isn't implementing programming language cool? SICP teach you that.
 
+   Critique of SICP by HtDP authors : https://www2.ccs.neu.edu/racket/pubs/fdpe2002-fffk.pdf
    
    1. It is free. https://web.mit.edu/6.001/6.037/sicp.pdf
    2. Author Lecture Videos. https://youtu.be/-J_xL4IGhJA
@@ -42,7 +43,6 @@ How to read a book - Charles Van Doren and Mortimer J. Adler
    4. Essentials of Programming Languages - Daniel P. Friedman and Mitchell Wand
    5. Compilers: Principles, Techniques & Tools
 6. Deep Learning
-   
    1. Andrej Kaparthy, Neural Network : Zero to Hero - https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
    2. TensorFlow, Keras and deep learning, without a PhD - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist
 

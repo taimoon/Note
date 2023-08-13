@@ -47,16 +47,16 @@ Most of the mathematics are statistics. Indeed, the essence of the program is to
 ## Programming and Data Science
 1. Problem Solving (C)
 2. Programming Techniques (C)
-3. Data Structure and Algorithm
+3. Data Structure and Algorithm (C)
 4. DSP I (Python)
 5. DSP II (R)
-6. Database System
+6. Database System (SQL)
 7. Data Warehouse
 8. Data Wrangling (filler) 
 9. Data Mining (filler)
 10. Introduction to Data Science (filler course)
-11. Storytelling and Data Visualization
-12. Artificial Intelligence
+11. Storytelling and Data Visualization (Tableau)
+12. Artificial Intelligence (Python)
 
 Problem solving is just another filler course.
 
@@ -78,7 +78,7 @@ Data Wrangling should be taught better
 
 Introduction to data science is just a waste of time.
 
-Software engineering and system analysis design are more relevant than principles of operations management and industrial quality management. Thought, three of them are percieved as useless by many students.
+Software engineering and system analysis design are more relevant than principles of operations management and industrial quality management. Though, students usually doesn't appreciate these much.
 
 ## Synergy
 
