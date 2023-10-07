@@ -12,17 +12,18 @@ Read a lot.
 
 How to read a book - Charles Van Doren and Mortimer J. Adler
 
+Learn to use keyboard does the thing besides using cursor
 
 # Computer Science
 1. Structure and Interpretation of Computer Programs, 2nd ed.
    
-   For programming, I would recommend only one book : SICP.
+   For programming and general introduction to CS, I would recommend only one book : SICP.
 
    Harvard's cs50x is by far the best CS for general audience. Although SICP is created as introduction to CS, it is notoriously difficult, dense, somewhat "outdated" and hated by many. It is designed during 1980s and the choice of language Scheme only make it worst. 
    
    It covers many important concepts such as algorithm analysis, data abstraction, functional programming, object oriented programming, stream, concurrency, interpreter (chapter 4), lazy-evaluation, non-determinsitc programming, logic programming and compiler (chapter 5). 
 
-   Why SICP? Because unlike other courses only teach you well verse of certain specific programming language and technology, SICP teaches you about CS itself. It delivers fundamentals in the most intellectually fun way. The practices of SICP are not drill but provoke you to think carefully. Anyway, isn't implementing programming language cool? SICP teach you that.
+   Why SICP? Because unlike other courses only teach you well verse of certain specific programming language and technology, SICP teaches you about CS itself. It delivers fundamentals in the most intellectually fun way possible. The practices of SICP mostly are not drill but provoke you to think carefully. Anyway, isn't implementing programming language cool? SICP teach you that!
 
    Critique of SICP by HtDP authors : https://www2.ccs.neu.edu/racket/pubs/fdpe2002-fffk.pdf
    
@@ -36,7 +37,7 @@ How to read a book - Charles Van Doren and Mortimer J. Adler
    2. Computer Systems: A Programmer's Perspective - Randal E. Bryant and David R. O'Hallaron
 3. [Readings in Database Systems](http://www.redbook.io/)
 4. The Algorithm Design Manual - Skiena
-5. Interpreter and Compiler (from easy to hard)
+5. Programming Language Implementation and Design: Interpreter and Compiler (from easy to hard)
    1. SICP (chapter 4 - 5)
    2. nand2tetris (project 6 - 11) 
    3. [Crafting Interpreter](https://craftinginterpreters.com/contents.html)

@@ -1,5 +1,5 @@
 # Preface
-This article mirros someone's thought about his university course. Don't expect it is useful.
+This article mirros someone's thought about his university course. Don't expect it is useful and don't take this seriously.
 
 # Background - Course Review
 
@@ -10,15 +10,16 @@ https://psm.ump.edu.my/index.php/admission/programme-offered/undergraduate/bache
 ![image](https://psm.ump.edu.my/images/undergrad-data/curriculum-structure-figure_bsd-batch-2022-wbl.jpg)
 ![image](https://psm.ump.edu.my/images/undergrad-data/bsd-skills-2022.png)
 
-In Malaysia, courses under 2u2i mode and other similiar variants either have extended internship period or internship interleaved with lectures or both. For the UMP's data analytic course, it includes one year of internship where its first half year is interleaved with online lectures and completing FYP and remaining half is usual internship.
+In Malaysia, courses with 2u2i mode will either have extended internship period or internship interleaved with lectures or both. For the UMP's data analytic course, it includes one year of internship where its first half year is interleaved with online lectures and completing FYP and remaining half is usual internship.
 
 My campus is not the main campus and where other engineering students at. Ironically, computer science students are at the main campus but my course faculty is not. This is because the course is designed by the Mathematical Science Center rather than Computer Science. Due to that, most of my lectures are statistician and few are mathematicians. 
 
-The program is heavily mathematical oriented. Weirdly, the enrollment doesn't require students to has basic in Calculus and A-level equivalent Mathematics. Then, half of the enrolled students only have some basic (i.e.: Add-Math) or zero knowledge about mathemtics. Although they will gone through tuition class offered by my faculty, they still struggle in learning mathematical stuffs. The mathematics courses are really easy for those who have learnt; literally filler courses for them. I think that it can be done better.
+Therefore, the program is heavily mathematical oriented. Weirdly, the enrollment doesn't require students to has basic in Calculus and A-level equivalent Mathematics. Then, half of the enrolled students only have some basic (i.e.: Add-Math) or zero knowledge about mathemtics. Although they will gone through tuition class offered by my faculty, they still struggle in learning mathematical stuffs. The mathematics courses are really easy for those who have learnt; literally filler courses for them. I think that it can be done better. 
+
 
 
 ## Language Courses
-Language courses are just ... meh. By the way, I took German as foreign language course since I can speak,read and write Chinese so cannot take Chinese as foreign language. Sadly, I'm not literate enough to understand Deutsch. I also learn that many prominent figures in classical music, mathematics and philosophy are related to German.
+Language courses are just ... meh. By the way, I took German as foreign language course since I can speak,read and write Chinese so cannot take Chinese as foreign language. Sadly, I'm not literate enough to understand *Deutsch*.
 
 ## Common Courses
 1. Softskills
@@ -26,7 +27,7 @@ Language courses are just ... meh. By the way, I took German as foreign language
 3. Technoprenuership 
 4. Kokurikulum
 
-These courses are compulsory taken by all Malaysia Government University in accordance to policies. They are badly delivered in my uni. No one like these. I learn nothing from these.
+These courses are compulsory taken by all Malaysia Government University in accordance to policies from time to time. They are badly delivered in my university. No one like these. I learn nothing from these.
 
 ## Other Domains
 1. Principles of Operation Management
@@ -74,11 +75,9 @@ Database and Data warehouse can be combined.
 
 Data Mining and Machine learning can be combined.
 
-Data Wrangling should be taught better
-
 Introduction to data science is just a waste of time.
 
-Software engineering and system analysis design are more relevant than principles of operations management and industrial quality management. Though, students usually doesn't appreciate these much.
+Software engineering and system analysis design are more relevant than principles of operations management and industrial quality management. Though, students usually doesn't appreciate these much at early stage.
 
 ## Synergy
 
